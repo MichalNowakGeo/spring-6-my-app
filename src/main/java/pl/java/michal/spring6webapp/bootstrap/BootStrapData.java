@@ -48,6 +48,8 @@ public class BootStrapData implements CommandLineRunner {
 
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(noEJBSaved);
+        dddSaved.getAuthors().add(ericSaved);
+        noEJBSaved.getAuthors().add(rodSaved);
 
         Publisher helion = new Publisher();
         helion.setPublisherName("Helion");
@@ -60,7 +62,6 @@ public class BootStrapData implements CommandLineRunner {
         noEJBSaved.setPublisher(helionSaved);
 
         authorRepository.save(rodSaved);
-
         authorRepository.save(ericSaved);
         bookRepository.save(dddSaved);
         bookRepository.save(noEJBSaved);
